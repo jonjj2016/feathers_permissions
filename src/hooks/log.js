@@ -4,14 +4,8 @@
 // eslint-disable-next-line no-unused-vars
 module.exports = (options = {}) => {
   return async context => {
-    const data = {
-      role:'owner',
-      userId:context.params.user._id,
-      createdBy: context.params.user._id,
-    } 
-    context.data.permissions=[
-      data
-    ]
+    console.log(context.params.query);
+    console.log(context.data);
     return context;
   };
 };

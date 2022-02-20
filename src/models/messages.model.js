@@ -8,11 +8,16 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const schema = new Schema({
-    text: { type: String, required: true },
+    message: { type: String, required: true },
     userId: {
       required: true,
       type: mongoose.Schema.Types.ObjectId,
       ref:'users'
+    },
+    bucket:{
+      required: true,
+      type: mongoose.Schema.Types.ObjectId,
+      ref:'buckets'
     }
   }, {
     timestamps: true
